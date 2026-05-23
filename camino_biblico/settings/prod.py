@@ -10,8 +10,8 @@ DEBUG = False
 
 # 1. Corregido: Sin espacios y con tu nuevo dominio .com
 ALLOWED_HOSTS = os.environ.get(
-    'ALLOWED_HOSTS', 
-    'camino-biblico.com,camino-biblico-app.onrender.com'
+    'ALLOWED_HOSTS',
+    'camino-biblico.com,camino-biblico-app.onrender.com,biblialingo-app.onrender.com'
 ).split(',')
 
 # Database - PostgreSQL via DATABASE_URL
@@ -26,13 +26,13 @@ DATABASES = {
 # 2. Corregido: Sin espacios. Esto evita errores de CORS en el Flutter app
 CORS_ALLOWED_ORIGINS = os.environ.get(
     'CORS_ALLOWED_ORIGINS',
-    'https://camino-biblico.com,https://camino-biblico-app.onrender.com'
+    'https://camino-biblico.com,https://camino-biblico-app.onrender.com,https://biblialingo-app.onrender.com'
 ).split(',')
 
 # 3. NUEVO: Necesario para poder iniciar sesión en /admin sin errores 403
 CSRF_TRUSTED_ORIGINS = os.environ.get(
     'CSRF_TRUSTED_ORIGINS',
-    'https://camino-biblico.com,https://camino-biblico-app.onrender.com'
+    'https://camino-biblico.com,https://camino-biblico-app.onrender.com,https://biblialingo-app.onrender.com'
 ).split(',')
 
 # Security settings
