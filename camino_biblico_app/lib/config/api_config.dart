@@ -6,7 +6,7 @@ class ApiConfig {
   /// Producción: https://camino-biblico-app.onrender.com/api/v1
   /// Staging: https://camino_biblico-staging.onrender.com/api/v1
   /// Desarrollo Local: http://192.168.1.8:8000/api/v1
-  static const String baseUrl = 'https://camino-biblico.com/api/v1';
+  static const String baseUrl = 'https://biblialingo-app.onrender.com/api/v1';
 
   /// Timeout en segundos para requests HTTP
   static const int requestTimeoutSeconds = 30;
