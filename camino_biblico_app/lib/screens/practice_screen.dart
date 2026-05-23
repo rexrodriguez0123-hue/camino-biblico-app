@@ -154,10 +154,14 @@ class _PracticeScreenState extends State<PracticeScreen> {
     }
 
     // Calcular corazones restantes inmediatamente (antes de la respuesta async)
-    int remainingHearts = context.read<UserState>().hearts;
+    final userState = context.read<UserState>();
+    int remainingHearts = userState.hearts;
     if (!correctGuess && !isRepeat && remainingHearts > 0) {
       remainingHearts -= 1;
-      
+
+      // Actualizar el estado INMEDIATAMENTE sin esperar al backend
+      userState.updateStats(hearts: remainingHearts);
+
       // Agregar el ejercicio al final de la cola para repetir
       final exerciseId = currentExercise['id'];
       if (!_repeatedExerciseIds.contains(exerciseId)) {
